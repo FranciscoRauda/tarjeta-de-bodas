@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { wedding } from "@/lib/wedding";
-import { readRsvps, saveRsvp } from "@/lib/rsvps";
+import { readRsvps, saveRsvp, type Rsvp } from "@/lib/rsvps";
 
 type Payload = {
   name?: string;
@@ -45,13 +45,13 @@ export async function POST(request: Request) {
   const name = (body.name ?? "").trim();
   const adults = Number(body.adults ?? 0);
   const minors = Number(body.minors ?? 0);
-  const attending = body.attending === "no" ? "no" : "si";
+  const attending: Rsvp["attending"] = body.attending === "no" ? "no" : "si";
 
   if (name.length < 3 || adults < 1 || adults > 10 || minors < 0 || minors > 10) {
     return NextResponse.json({ error: "Datos incompletos" }, { status: 400 });
   }
 
-  const row = {
+  const row: Rsvp = {
     name,
     adults,
     minors,
