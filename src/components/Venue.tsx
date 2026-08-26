@@ -10,7 +10,7 @@ export function Venue() {
         {wedding.venue.extra}
       </p>
 
-      <div className="relative mt-7 overflow-hidden bg-[#eef3ee]">
+      <div className="relative mt-7 overflow-hidden bg-[#eef1f4]">
         <iframe
           title="Casa Vulkan en Google Maps"
           src={wedding.venue.mapsEmbed}
@@ -22,7 +22,7 @@ export function Venue() {
           href={mapsHref()}
           target="_blank"
           rel="noreferrer"
-          className="absolute bottom-4 left-1/2 z-10 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-[#f78fb3] px-5 py-2.5 text-sm font-semibold text-white shadow-md"
+          className="absolute bottom-4 left-1/2 z-10 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-[#8a919b] px-5 py-2.5 text-sm font-semibold text-white shadow-md"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
             <path

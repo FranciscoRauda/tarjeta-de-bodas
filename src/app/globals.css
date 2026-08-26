@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-volcanic: #f4dce4;
-  --color-ink: #5a3040;
-  --color-bark: #7a4458;
-  --color-ember: #c45d7a;
-  --color-clay: #d47890;
-  --color-gold: #c45d7a;
-  --color-linen: #fceef3;
-  --color-paper: #fffdfc;
-  --color-moss: #c45d7a;
-  --color-dusk: #e8a4b8;
+  --color-volcanic: #e8eaee;
+  --color-ink: #2c3036;
+  --color-bark: #5c636c;
+  --color-ember: #8a919b;
+  --color-clay: #a8aeb6;
+  --color-gold: #9aa1ab;
+  --color-linen: #eef1f4;
+  --color-paper: #ffffff;
+  --color-moss: #8a919b;
+  --color-dusk: #c5cad1;
   --font-display: var(--font-gloock), ui-serif, Georgia, serif;
   --font-script: var(--font-script), cursive;
   --font-serif: var(--font-source), ui-serif, Georgia, serif;
@@ -26,8 +26,8 @@ body {
 }
 
 ::selection {
-  background: #e8a4b8;
-  color: #fff;
+  background: #c5cad1;
+  color: #1f2226;
 }
 
 .noise::before {
@@ -45,9 +45,9 @@ body {
   display: grid;
   place-items: start center;
   background:
-    radial-gradient(1200px 600px at 50% -10%, #f8d5e0 0%, transparent 55%),
-    radial-gradient(800px 500px at 80% 120%, #fce8ef 0%, transparent 50%),
-    #f7e6ec;
+    radial-gradient(1100px 520px at 50% -8%, #ffffff 0%, transparent 58%),
+    radial-gradient(720px 480px at 86% 112%, #c5cad3 0%, transparent 52%),
+    linear-gradient(165deg, #f7f8fa 0%, #e6e9ee 46%, #cfd4dc 100%);
 }
 
 .invite-card {
@@ -57,8 +57,8 @@ body {
   background: var(--color-paper);
   overflow: clip;
   box-shadow:
-    0 0 0 1px rgba(196, 93, 122, 0.16),
-    0 40px 80px -30px rgba(196, 93, 122, 0.35);
+    0 0 0 1px rgba(138, 145, 155, 0.35),
+    0 40px 80px -30px rgba(70, 76, 86, 0.38);
 }
 
 @media (min-width: 480px) {
@@ -123,7 +123,7 @@ body {
 }
 
 .cover-sky {
-  background: linear-gradient(180deg, #ffffff 0%, #fce8ef 42%, #e8a4b8 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #eef1f4 42%, #c5cad1 100%);
 }
 
 .section-pad {
@@ -132,7 +132,7 @@ body {
 
 .field {
   width: 100%;
-  border: 1px solid #d9d3ce;
+  border: 1px solid #cfd3d8;
   background: #fff;
   border-radius: 10px;
   padding: 0.85rem 1rem;
@@ -144,7 +144,7 @@ body {
 
 .field:focus {
   border-color: var(--color-clay);
-  box-shadow: 0 0 0 3px rgba(196, 93, 122, 0.18);
+  box-shadow: 0 0 0 3px rgba(138, 145, 155, 0.22);
 }
 
 .btn-ember {
@@ -155,14 +155,14 @@ body {
   width: 100%;
   border: 0;
   border-radius: 999px;
-  background: linear-gradient(180deg, #d47890 0%, #c45d7a 100%);
-  color: #fffdfc;
+  background: linear-gradient(180deg, #d8dce3 0%, #9aa1ab 52%, #7d848e 100%);
+  color: #1f2226;
   font-family: var(--font-serif);
   font-size: 1rem;
   letter-spacing: 0.02em;
   padding: 0.95rem 1.25rem;
   cursor: pointer;
-  box-shadow: 0 10px 24px -12px rgba(196, 93, 122, 0.85);
+  box-shadow: 0 10px 24px -12px rgba(70, 76, 86, 0.7);
   transition: transform 0.2s, filter 0.2s;
 }
 
@@ -184,7 +184,7 @@ body {
   gap: 0.45rem;
   width: 100%;
   border-radius: 999px;
-  border: 1px solid rgba(196, 93, 122, 0.45);
+  border: 1px solid rgba(138, 145, 155, 0.55);
   background: transparent;
   color: var(--color-ink);
   padding: 0.85rem 1.1rem;
@@ -195,7 +195,7 @@ body {
 .polaroid {
   background: #fff;
   padding: 9px 9px 28px;
-  box-shadow: 0 14px 28px -12px rgba(58, 42, 34, 0.28);
+  box-shadow: 0 14px 28px -12px rgba(44, 48, 54, 0.28);
   border-radius: 2px;
   touch-action: none;
   user-select: none;

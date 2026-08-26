@@ -130,7 +130,7 @@ export function Gallery() {
       <button
         type="button"
         onClick={() => fly("left")}
-        className="mt-2 flex w-full flex-col items-center gap-1 bg-[#f7e6ec] py-5 text-[#3e4c3c]"
+        className="mt-2 flex w-full flex-col items-center gap-1 bg-[#eef1f4] py-5 text-[#4a5058]"
       >
         <span className="swipe-hint-icon" aria-hidden>
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">

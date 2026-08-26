@@ -50,7 +50,7 @@ export function Timeline() {
       </h3>
 
       <ol className="relative mt-8">
-        <span className="absolute bottom-3 left-1/2 top-3 w-px -translate-x-1/2 bg-[#f0c9d4]" />
+        <span className="absolute bottom-3 left-1/2 top-3 w-px -translate-x-1/2 bg-[#c5cad1]" />
         {wedding.itinerary.map((item, i) => {
           const left = i % 2 === 0;
           return (
@@ -69,7 +69,7 @@ export function Timeline() {
                 ) : null}
               </div>
               <div className="flex justify-center">
-                <span className="relative z-10 h-3 w-3 rounded-full bg-[#f0c9d4] ring-4 ring-[#fffdfc]" />
+                <span className="relative z-10 h-3 w-3 rounded-full bg-[#c5cad1] ring-4 ring-white" />
               </div>
               <div>
                 {!left ? (

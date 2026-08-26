@@ -40,12 +40,12 @@ export function Countdown() {
   ];
 
   return (
-    <section className="bg-[#fceef3] px-6 py-10">
-      <p className="text-center text-[0.65rem] tracking-[0.35em] uppercase text-[#c45d7a]">
+    <section className="bg-[#eef1f4] px-6 py-10">
+      <p className="text-center text-[0.65rem] tracking-[0.35em] uppercase text-[#8a919b]">
         Falta para el día
       </p>
       {left.done ? (
-        <p className="mt-4 text-center font-[family-name:var(--font-script)] text-3xl text-[#5a3040]">
+        <p className="mt-4 text-center font-[family-name:var(--font-script)] text-3xl text-[#2c3036]">
           ¡Hoy es el día!
         </p>
       ) : (
@@ -53,12 +53,12 @@ export function Countdown() {
           {cells.map((c) => (
             <div
               key={c.l}
-              className="rounded-2xl bg-white px-1 py-3 text-center text-[#5a3040] shadow-[0_8px_20px_-12px_rgba(196,93,122,0.45)]"
+              className="rounded-2xl bg-white px-1 py-3 text-center text-[#2c3036] shadow-[0_8px_20px_-12px_rgba(70,76,86,0.35)]"
             >
               <div className="font-[family-name:var(--font-display)] text-2xl tabular-nums">
                 {pad(c.n)}
               </div>
-              <div className="mt-1 text-[0.6rem] tracking-[0.18em] uppercase text-[#c45d7a]">
+              <div className="mt-1 text-[0.6rem] tracking-[0.18em] uppercase text-[#8a919b]">
                 {c.l}
               </div>
             </div>

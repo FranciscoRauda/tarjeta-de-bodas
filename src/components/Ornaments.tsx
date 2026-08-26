@@ -19,7 +19,7 @@ export function LeafDivider({ className = "" }: { className?: string }) {
         fill="currentColor"
         opacity="0.85"
       />
-      <circle cx="90" cy="14" r="2.2" fill="#c45d7a" />
+      <circle cx="90" cy="14" r="2.2" fill="#8a919b" />
     </svg>
   );
 }
@@ -54,14 +54,14 @@ export function WaxSeal({ initials }: { initials: string }) {
   return (
     <div className="animate-seal relative grid h-[92px] w-[92px] place-items-center">
       <svg width="92" height="92" viewBox="0 0 92 92" aria-hidden>
-        <circle cx="46" cy="46" r="44" fill="#c45d7a" />
-        <circle cx="46" cy="46" r="38" fill="#d47890" />
+        <circle cx="46" cy="46" r="44" fill="#8a919b" />
+        <circle cx="46" cy="46" r="38" fill="#a8aeb6" />
         <circle
           cx="46"
           cy="46"
           r="34"
           fill="none"
-          stroke="#fffdfc"
+          stroke="#ffffff"
           strokeWidth="1.2"
           strokeDasharray="2 3"
         />

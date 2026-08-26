@@ -69,9 +69,9 @@ export function Confirmations() {
   }
 
   return (
-    <main className="min-h-dvh bg-[#f7e6ec] px-4 py-10 text-[#5a3040]">
-      <div className="mx-auto w-full max-w-3xl rounded-[28px] bg-white p-6 shadow-[0_24px_60px_-36px_rgba(196,93,122,0.45)] sm:p-10">
-        <p className="text-center text-[0.65rem] tracking-[0.35em] uppercase text-[#c45d7a]">
+    <main className="min-h-dvh bg-[#e8eaee] px-4 py-10 text-[#2c3036]">
+      <div className="mx-auto w-full max-w-3xl rounded-[28px] bg-white p-6 shadow-[0_24px_60px_-36px_rgba(70,76,86,0.4)] sm:p-10">
+        <p className="text-center text-[0.65rem] tracking-[0.35em] uppercase text-[#8a919b]">
           Solo anfitriones
         </p>
         <h1 className="mt-2 text-center font-[family-name:var(--font-hero)] text-5xl">
@@ -96,7 +96,7 @@ export function Confirmations() {
             <button className="btn-ember" type="submit">
               Ver lista
             </button>
-            {error ? <p className="text-center text-sm text-[#c45d7a]">{error}</p> : null}
+            {error ? <p className="text-center text-sm text-[#8a919b]">{error}</p> : null}
           </form>
         ) : data ? (
           <>
@@ -107,9 +107,9 @@ export function Confirmations() {
                 ["Adultos", data.totals.adults],
                 ["Menores", data.totals.minors],
               ].map(([label, n]) => (
-                <div key={label} className="rounded-2xl bg-[#fceef3] px-3 py-4 text-center">
+                <div key={label} className="rounded-2xl bg-[#eef1f4] px-3 py-4 text-center">
                   <div className="font-[family-name:var(--font-display)] text-2xl">{n}</div>
-                  <div className="mt-1 text-[0.65rem] tracking-[0.16em] uppercase text-[#c45d7a]">
+                  <div className="mt-1 text-[0.65rem] tracking-[0.16em] uppercase text-[#8a919b]">
                     {label}
                   </div>
                 </div>
@@ -121,23 +121,23 @@ export function Confirmations() {
                 Todavía no hay confirmaciones.
               </p>
             ) : (
-              <ul className="mt-8 divide-y divide-[#f0d7de]">
+              <ul className="mt-8 divide-y divide-[#d8dce3]">
                 {data.list.map((row, i) => (
                   <li key={`${row.at}-${i}`} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <p className="font-semibold">{row.name}</p>
-                      <p className="text-sm text-[#7a4458]">
+                      <p className="text-sm text-[#5c636c]">
                         {row.adults} adulto{row.adults === 1 ? "" : "s"}
                         {row.minors > 0 ? ` · ${row.minors} menor${row.minors === 1 ? "" : "es"}` : ""}
                         {row.phone ? ` · +503 ${row.phone}` : ""}
                       </p>
                     </div>
-                    <div className="text-sm text-[#7a4458]">
+                    <div className="text-sm text-[#5c636c]">
                       <span
                         className={`mr-3 rounded-full px-2 py-0.5 text-xs ${
                           row.attending === "si"
-                            ? "bg-[#fceef3] text-[#c45d7a]"
-                            : "bg-[#f4ece1] text-[#7a4458]"
+                            ? "bg-[#eef1f4] text-[#4a5058]"
+                            : "bg-[#f4f5f7] text-[#5c636c]"
                         }`}
                       >
                         {row.attending === "si" ? "Asiste" : "No asiste"}
@@ -148,7 +148,7 @@ export function Confirmations() {
                 ))}
               </ul>
             )}
-            <p className="mt-8 text-center text-xs text-[#7a4458]">
+            <p className="mt-8 text-center text-xs text-[#5c636c]">
               No compartan este enlace con invitados.
             </p>
           </>
