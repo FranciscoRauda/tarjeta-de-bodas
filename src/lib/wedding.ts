@@ -9,13 +9,13 @@ export const wedding = {
   invitationLine:
     "Con la alegría de quienes se eligen de nuevo cada día, los invitamos a celebrar nuestra unión.",
   datetime: {
-    iso: "2026-12-21T16:30:00-06:00",
+    iso: "2026-12-21T15:30:00-06:00",
     receptionIso: "2026-12-21T15:30:00-06:00",
     displayDate: "21 de diciembre de 2026",
     shortDate: "21 · 12 · 2026",
     slashDate: "21/12/2026",
-    ceremonyTime: "4:30 p.m.",
-    heroTime: "04:30 pm",
+    ceremonyTime: "3:30 p.m.",
+    heroTime: "03:30 pm",
     timezone: "America/El_Salvador",
   },
   venue: {
