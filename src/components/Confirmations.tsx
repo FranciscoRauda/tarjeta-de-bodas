@@ -71,7 +71,7 @@ export function Confirmations() {
   return (
     <main className="min-h-dvh bg-[#e8eaee] px-4 py-10 text-[#2c3036]">
       <div className="mx-auto w-full max-w-3xl rounded-[28px] bg-white p-6 shadow-[0_24px_60px_-36px_rgba(70,76,86,0.4)] sm:p-10">
-        <p className="text-center text-[0.65rem] tracking-[0.35em] uppercase text-[#8a919b]">
+        <p className="text-center text-[0.65rem] tracking-[0.35em] uppercase text-[#b8860b]">
           Solo anfitriones
         </p>
         <h1 className="mt-2 text-center font-[family-name:var(--font-hero)] text-5xl">
@@ -96,7 +96,7 @@ export function Confirmations() {
             <button className="btn-ember" type="submit">
               Ver lista
             </button>
-            {error ? <p className="text-center text-sm text-[#8a919b]">{error}</p> : null}
+            {error ? <p className="text-center text-sm text-[#d4af37]">{error}</p> : null}
           </form>
         ) : data ? (
           <>
@@ -109,7 +109,7 @@ export function Confirmations() {
               ].map(([label, n]) => (
                 <div key={label} className="rounded-2xl bg-[#eef1f4] px-3 py-4 text-center">
                   <div className="font-[family-name:var(--font-display)] text-2xl">{n}</div>
-                  <div className="mt-1 text-[0.65rem] tracking-[0.16em] uppercase text-[#8a919b]">
+                  <div className="mt-1 text-[0.65rem] tracking-[0.16em] uppercase text-[#b8860b]">
                     {label}
                   </div>
                 </div>
@@ -136,7 +136,7 @@ export function Confirmations() {
                       <span
                         className={`mr-3 rounded-full px-2 py-0.5 text-xs ${
                           row.attending === "si"
-                            ? "bg-[#eef1f4] text-[#4a5058]"
+                            ? "bg-[#eef1f4] text-[#d4af37]"
                             : "bg-[#f4f5f7] text-[#5c636c]"
                         }`}
                       >

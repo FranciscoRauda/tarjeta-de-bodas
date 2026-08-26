@@ -26,19 +26,19 @@ export function Invitation() {
             <Timeline />
             <Gallery />
             <RsvpForm />
-            <footer className="bg-[#4a5058] px-6 py-10 text-center text-white">
+            <footer className="bg-[#d4af37] px-6 py-10 text-center text-white">
               <p className="font-[family-name:var(--font-script)] text-4xl">
                 {wedding.couple.partnerOne.first} & {wedding.couple.partnerTwo.first}
               </p>
               <p className="mt-3 text-[0.7rem] tracking-[0.28em] uppercase">
                 {wedding.datetime.shortDate} · {wedding.venue.name}
               </p>
-              <p className="mt-6 text-[0.7rem] leading-relaxed text-white/80">
+              <p className="mt-6 text-[0.7rem] leading-relaxed text-white/90">
                 Link de invitación ilimitado
                 <br />
                 <span className="break-all">/i/{wedding.slug}</span>
               </p>
-              <p className="mt-4 text-[0.65rem] text-white/50">
+              <p className="mt-4 text-[0.65rem] text-white/85">
                 {coupleFullNames()}
               </p>
             </footer>

@@ -22,7 +22,7 @@ export function Venue() {
           href={mapsHref()}
           target="_blank"
           rel="noreferrer"
-          className="absolute bottom-4 left-1/2 z-10 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-[#8a919b] px-5 py-2.5 text-sm font-semibold text-white shadow-md"
+          className="absolute bottom-4 left-1/2 z-10 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-[#d4af37] px-5 py-2.5 text-sm font-semibold text-[#2a2418] shadow-md"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
             <path
