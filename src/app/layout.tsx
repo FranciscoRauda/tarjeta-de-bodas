@@ -59,8 +59,11 @@ export default function RootLayout({
     <html
       lang="es"
       className={`${gloock.variable} ${script.variable} ${hero.variable} ${source.variable}`}
+      suppressHydrationWarning
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }
