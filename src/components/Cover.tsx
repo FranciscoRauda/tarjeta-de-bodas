@@ -9,7 +9,7 @@ export function Cover({ onOpen }: { onOpen: () => void }) {
         <button
           type="button"
           onClick={onOpen}
-          className="w-full rounded-full border border-white/80 bg-white/25 px-5 py-3.5 font-[family-name:var(--font-serif)] text-white backdrop-blur-sm transition hover:bg-white/40 [text-shadow:0_1px_8px_rgba(0,0,0,0.25)]"
+          className="w-full rounded-full bg-[#d4af37] px-5 py-3.5 font-[family-name:var(--font-serif)] font-semibold text-[#2a2418] shadow-[0_10px_22px_-12px_rgba(184,134,11,0.8)] transition hover:brightness-105"
         >
           Abrir invitación
         </button>

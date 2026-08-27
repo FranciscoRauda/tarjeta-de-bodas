@@ -7,7 +7,7 @@ export const wedding = {
   },
   tagline: "Una civil al pie del volcán",
   invitationLine:
-    "Con la alegría de quienes se eligen de nuevo cada día, los invitamos a celebrar nuestra unión.",
+    "Queremos que seas parte del inicio de una nueva etapa en nuestras vidas.",
   datetime: {
     iso: "2026-12-21T15:30:00-06:00",
     receptionIso: "2026-12-21T15:30:00-06:00",
@@ -68,6 +68,11 @@ export function coupleFullNames() {
 
 export function mapsHref() {
   return wedding.venue.mapsUrl;
+}
+
+export function wazeHref() {
+  const q = encodeURIComponent(wedding.venue.mapsQuery);
+  return `https://waze.com/ul?q=${q}&navigate=yes`;
 }
 
 export function rsvpWhatsAppHref(input: {
