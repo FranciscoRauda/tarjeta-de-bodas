@@ -41,7 +41,7 @@ export function Countdown() {
 
   return (
     <section className="bg-[#eef1f4] px-6 py-10">
-      <p className="text-center text-[0.65rem] tracking-[0.35em] uppercase text-[#b8860b]">
+      <p className="text-center text-[0.65rem] tracking-[0.35em] uppercase text-[#575E4B]">
         Falta para el día
       </p>
       {left.done ? (
@@ -58,7 +58,7 @@ export function Countdown() {
               <div className="font-[family-name:var(--font-display)] text-2xl tabular-nums">
                 {pad(c.n)}
               </div>
-              <div className="mt-1 text-[0.6rem] tracking-[0.18em] uppercase text-[#b8860b]">
+              <div className="mt-1 text-[0.6rem] tracking-[0.18em] uppercase text-[#575E4B]">
                 {c.l}
               </div>
             </div>

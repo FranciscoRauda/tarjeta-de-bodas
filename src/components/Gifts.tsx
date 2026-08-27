@@ -8,7 +8,7 @@ function EnvelopeMark() {
       viewBox="0 0 86 62"
       fill="none"
       aria-hidden
-      className="mx-auto text-[#d4af37]"
+      className="mx-auto text-[#575E4B]"
     >
       <rect
         x="6"
@@ -31,7 +31,7 @@ function EnvelopeMark() {
         strokeWidth="1.2"
         opacity="0.55"
       />
-      <circle cx="43" cy="21" r="11.5" fill="#d4af37" />
+      <circle cx="43" cy="21" r="11.5" fill="#575E4B" />
       <circle cx="43" cy="21" r="9.2" fill="none" stroke="#fffdf8" strokeWidth="0.8" />
       <text
         x="43"
@@ -52,7 +52,7 @@ export function Gifts() {
 
   return (
     <section className="bg-[#fffdfc] px-8 pb-6 pt-10">
-      <p className="text-center text-[0.65rem] tracking-[0.38em] uppercase text-[#b8860b]">
+      <p className="text-center text-[0.65rem] tracking-[0.38em] uppercase text-[#575E4B]">
         {gifts.kicker}
       </p>
       <div className="mt-6">
@@ -61,12 +61,12 @@ export function Gifts() {
       <h3 className="mt-5 text-center font-[family-name:var(--font-hero)] text-[2.35rem] leading-[1.12] text-[#3a2a22]">
         {gifts.title}
       </h3>
-      <p className="mt-2 text-center font-[family-name:var(--font-hero)] text-[1.7rem] leading-tight text-[#b8860b]">
+      <p className="mt-2 text-center font-[family-name:var(--font-hero)] text-[1.7rem] leading-tight text-[#575E4B]">
         {gifts.line}
       </p>
       <span
         aria-hidden
-        className="mx-auto mt-8 block h-px w-20 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent"
+        className="mx-auto mt-8 block h-px w-20 bg-gradient-to-r from-transparent via-[#575E4B] to-transparent"
       />
     </section>
   );

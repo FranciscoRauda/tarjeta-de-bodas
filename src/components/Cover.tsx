@@ -16,15 +16,15 @@ export function Cover({ onOpen }: { onOpen: () => void }) {
 
   return (
     <section className="envelope-stage">
-      <div className="pointer-events-none absolute inset-[10px] border border-[#d4af37]/50" />
-      <div className="pointer-events-none absolute inset-[16px] border border-[#d4af37]/22" />
+      <div className="pointer-events-none absolute inset-[10px] border border-[#575E4B]/50" />
+      <div className="pointer-events-none absolute inset-[16px] border border-[#575E4B]/22" />
 
-      <p className="relative z-10 text-[0.68rem] tracking-[0.46em] uppercase text-[#b8860b]">
+      <p className="relative z-10 text-[0.68rem] tracking-[0.46em] uppercase text-[#575E4B]">
         Boda civil
       </p>
       <h1 className="relative z-10 mt-3 text-center font-[family-name:var(--font-hero)] text-[clamp(2.2rem,8vw,2.9rem)] leading-[1.12] text-[#2c3036]">
         {a.first}
-        <span className="block text-[1.7rem] text-[#b8860b]">y</span>
+        <span className="block text-[1.7rem] text-[#575E4B]">y</span>
         {b.first}
       </h1>
 
@@ -48,7 +48,7 @@ export function Cover({ onOpen }: { onOpen: () => void }) {
       <p className="relative z-10 mt-1 font-[family-name:var(--font-hero)] text-2xl text-[#2c3036]">
         {wedding.datetime.slashDate}
       </p>
-      <p className="relative z-10 font-[family-name:var(--font-hero)] text-xl text-[#b8860b]">
+      <p className="relative z-10 font-[family-name:var(--font-hero)] text-xl text-[#575E4B]">
         {wedding.datetime.heroTime}
       </p>
 
@@ -56,7 +56,7 @@ export function Cover({ onOpen }: { onOpen: () => void }) {
         type="button"
         onClick={open}
         disabled={opening}
-        className="relative z-10 mt-6 w-full max-w-[300px] rounded-full bg-[#d4af37] px-5 py-3.5 font-[family-name:var(--font-serif)] font-semibold text-[#2a2418] shadow-[0_10px_22px_-12px_rgba(184,134,11,0.8)] transition hover:brightness-105 disabled:opacity-70"
+        className="relative z-10 mt-6 w-full max-w-[300px] rounded-full bg-[#575E4B] px-5 py-3.5 font-[family-name:var(--font-serif)] font-semibold text-[#f4f2ea] shadow-[0_10px_22px_-12px_rgba(87,94,75,0.8)] transition hover:brightness-105 disabled:opacity-70"
       >
         {opening ? "Abriendo…" : "Abrir invitación"}
       </button>

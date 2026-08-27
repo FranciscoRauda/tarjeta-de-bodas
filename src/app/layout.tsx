@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   title,
   description,
   icons: {
-    icon: [{ url: "/favicon.svg?v=5", type: "image/svg+xml" }],
-    apple: "/favicon.svg?v=5",
+    icon: [{ url: "/favicon.svg?v=6", type: "image/svg+xml" }],
+    apple: "/favicon.svg?v=6",
   },
   openGraph: {
     title,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#e8eaee",
+  themeColor: "#575E4B",
   width: "device-width",
   initialScale: 1,
 };

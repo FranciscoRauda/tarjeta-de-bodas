@@ -29,7 +29,7 @@ function NavIcon() {
 export function Venue() {
   return (
     <section className="bg-[#fffdfc] px-6 pb-10 pt-12">
-      <p className="text-center text-[0.65rem] tracking-[0.38em] uppercase text-[#b8860b]">
+      <p className="text-center text-[0.65rem] tracking-[0.38em] uppercase text-[#575E4B]">
         Con ustedes
       </p>
       <p className="mt-4 text-center font-[family-name:var(--font-hero)] text-[2.85rem] leading-[1.15] text-[#2c3036]">
@@ -37,7 +37,7 @@ export function Venue() {
       </p>
       <span
         aria-hidden
-        className="mx-auto mt-7 mb-8 block h-px w-20 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent"
+        className="mx-auto mt-7 mb-8 block h-px w-20 bg-gradient-to-r from-transparent via-[#575E4B] to-transparent"
       />
 
       <h3 className="text-center font-[family-name:var(--font-hero)] text-[1.85rem] leading-snug text-[#6b5348]">
@@ -60,7 +60,7 @@ export function Venue() {
             href={mapsHref()}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#d4af37] px-3 py-2.5 text-center text-[0.82rem] font-semibold text-[#2a2418] shadow-md"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#575E4B] px-3 py-2.5 text-center text-[0.82rem] font-semibold text-[#f4f2ea] shadow-md"
           >
             <PinIcon />
             Google Maps
@@ -69,7 +69,7 @@ export function Venue() {
             href={wazeHref()}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#d4af37] px-3 py-2.5 text-center text-[0.82rem] font-semibold text-[#2a2418] shadow-md"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#575E4B] px-3 py-2.5 text-center text-[0.82rem] font-semibold text-[#f4f2ea] shadow-md"
           >
             <NavIcon />
             Waze

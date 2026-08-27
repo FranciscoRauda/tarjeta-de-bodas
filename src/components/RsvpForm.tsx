@@ -64,7 +64,7 @@ export function RsvpForm() {
       </p>
 
       {sent ? (
-        <p className="mt-8 rounded-2xl bg-[#d4af37] px-5 py-6 text-center font-[family-name:var(--font-serif)] text-[#2a2418]">
+        <p className="mt-8 rounded-2xl bg-[#575E4B] px-5 py-6 text-center font-[family-name:var(--font-serif)] text-[#f4f2ea]">
           ¡Gracias! Envíen el mensaje en WhatsApp para que quede confirmado.
         </p>
       ) : (
@@ -122,7 +122,7 @@ export function RsvpForm() {
           </label>
 
           <button
-            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#d4af37] py-3.5 font-semibold text-[#2a2418] disabled:opacity-45"
+            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#575E4B] py-3.5 font-semibold text-[#f4f2ea] disabled:opacity-45"
             disabled={!canSubmit}
             type="submit"
           >

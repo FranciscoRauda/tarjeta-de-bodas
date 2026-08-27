@@ -4,12 +4,12 @@
   --color-volcanic: #e8eaee;
   --color-ink: #2c3036;
   --color-bark: #5c636c;
-  --color-ember: #d4af37;
-  --color-clay: #e6c84a;
-  --color-gold: #d4af37;
+  --color-ember: #575E4B;
+  --color-clay: #7A826C;
+  --color-gold: #575E4B;
   --color-linen: #eef1f4;
   --color-paper: #ffffff;
-  --color-moss: #d4af37;
+  --color-moss: #575E4B;
   --color-dusk: #c5cad1;
   --font-display: var(--font-gloock), ui-serif, Georgia, serif;
   --font-script: var(--font-script), cursive;
@@ -26,7 +26,7 @@ body {
 }
 
 ::selection {
-  background: #d4af37;
+  background: #575E4B;
   color: #fffdf8;
 }
 
@@ -47,7 +47,7 @@ body {
   background:
     radial-gradient(1100px 520px at 50% -8%, #ffffff 0%, transparent 58%),
     radial-gradient(720px 480px at 86% 112%, #c5cad3 0%, transparent 52%),
-    radial-gradient(640px 420px at 12% 108%, #f0d56a 0%, transparent 55%),
+    radial-gradient(640px 420px at 12% 108%, #C5C8B8 0%, transparent 55%),
     linear-gradient(165deg, #f7f8fa 0%, #e6e9ee 46%, #cfd4dc 100%);
 }
 
@@ -58,7 +58,7 @@ body {
   background: var(--color-paper);
   overflow: clip;
   box-shadow:
-    0 0 0 1px rgba(212, 175, 55, 0.5),
+    0 0 0 1px rgba(87, 94, 75, 0.5),
     0 40px 80px -30px rgba(70, 76, 86, 0.36);
 }
 
@@ -124,7 +124,7 @@ body {
 }
 
 .cover-sky {
-  background: linear-gradient(180deg, #ffffff 0%, #eef1f4 42%, #f0d56a 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #eef1f4 42%, #C5C8B8 100%);
 }
 
 .section-pad {
@@ -145,7 +145,7 @@ body {
 
 .field:focus {
   border-color: var(--color-clay);
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.32);
+  box-shadow: 0 0 0 3px rgba(87, 94, 75, 0.32);
 }
 
 .btn-ember {
@@ -156,14 +156,14 @@ body {
   width: 100%;
   border: 0;
   border-radius: 999px;
-  background: linear-gradient(180deg, #f0d56a 0%, #d4af37 48%, #b8860b 100%);
-  color: #2a2418;
+  background: linear-gradient(180deg, #7A826C 0%, #575E4B 48%, #575E4B 100%);
+  color: #f6f4ea;
   font-family: var(--font-serif);
   font-size: 1rem;
   letter-spacing: 0.02em;
   padding: 0.95rem 1.25rem;
   cursor: pointer;
-  box-shadow: 0 10px 24px -12px rgba(184, 134, 11, 0.85);
+  box-shadow: 0 10px 24px -12px rgba(63, 68, 54, 0.85);
   transition: transform 0.2s, filter 0.2s;
 }
 
@@ -185,7 +185,7 @@ body {
   gap: 0.45rem;
   width: 100%;
   border-radius: 999px;
-  border: 1px solid rgba(212, 175, 55, 0.7);
+  border: 1px solid rgba(87, 94, 75, 0.7);
   background: transparent;
   color: var(--color-ink);
   padding: 0.85rem 1.1rem;
@@ -279,7 +279,7 @@ body {
   z-index: 1;
   height: 148px;
   overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.55);
+  border: 1px solid rgba(87, 94, 75, 0.55);
   background: #fff;
   box-shadow: 0 10px 24px -16px rgba(44, 48, 54, 0.4);
   transform: translateY(36px);
@@ -289,17 +289,17 @@ body {
   position: absolute;
   inset: 0;
   z-index: 0;
-  border: 1px solid #d4af37;
-  background: linear-gradient(180deg, #f4efe4 0%, #e8dfcc 100%);
+  border: 1px solid #575E4B;
+  background: linear-gradient(180deg, #ecefe3 0%, #d5d9c4 100%);
 }
 
 .envelope-pocket {
   position: absolute;
   inset: 0;
   z-index: 3;
-  background: linear-gradient(180deg, #fbf8f1 0%, #efe6d4 100%);
+  background: linear-gradient(180deg, #f4f5ee 0%, #e1e4d2 100%);
   clip-path: polygon(0 42%, 50% 78%, 100% 42%, 100% 100%, 0 100%);
-  box-shadow: inset 0 8px 16px -12px rgba(154, 123, 74, 0.35);
+  box-shadow: inset 0 8px 16px -12px rgba(63, 68, 54, 0.28);
 }
 
 .envelope-flap {
@@ -316,7 +316,7 @@ body {
   transform-style: preserve-3d;
   backface-visibility: hidden;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
-  background: linear-gradient(180deg, #f7f3ea 0%, #e4d7b8 100%);
+  background: linear-gradient(180deg, #f2f3ea 0%, #cfd4b8 100%);
   filter: drop-shadow(0 8px 10px rgba(44, 48, 54, 0.12));
   transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), z-index 0s 0.18s;
 }
@@ -328,11 +328,11 @@ body {
   width: 52px;
   place-items: center;
   border-radius: 999px;
-  background: radial-gradient(circle at 35% 30%, #e6c84a, #d4af37 46%, #b8860b);
+  background: radial-gradient(circle at 35% 30%, #7A826C, #575E4B 46%, #575E4B);
   color: #fffdf8;
   font-family: var(--font-script), cursive;
   font-size: 0.95rem;
-  box-shadow: 0 6px 14px -8px rgba(184, 134, 11, 0.9);
+  box-shadow: 0 6px 14px -8px rgba(63, 68, 54, 0.9);
 }
 
 .envelope.is-opening .envelope-flap {

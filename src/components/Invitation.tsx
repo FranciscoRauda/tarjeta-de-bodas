@@ -28,7 +28,7 @@ export function Invitation() {
             <Gallery />
             <Gifts />
             <RsvpForm />
-            <footer className="bg-[#d4af37] px-6 py-10 text-center text-white">
+            <footer className="bg-[#575E4B] px-6 py-10 text-center text-white">
               <p className="font-[family-name:var(--font-script)] text-4xl">
                 {wedding.couple.partnerOne.first} & {wedding.couple.partnerTwo.first}
               </p>
