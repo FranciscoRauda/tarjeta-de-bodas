@@ -34,15 +34,15 @@ export function Cover({ onOpen }: { onOpen: () => void }) {
         onClick={open}
         aria-label="Abrir invitación"
       >
-        <div className="envelope-letter">
+        <span className="envelope-letter">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/hero.png" alt="" className="h-full w-full object-cover object-[center_58%]" />
-        </div>
-        <div className="envelope-back" />
-        <div className="envelope-pocket" />
-        <div className="envelope-flap">
+        </span>
+        <span className="envelope-back" />
+        <span className="envelope-pocket" />
+        <span className="envelope-flap">
           <span className="envelope-seal">{wedding.couple.initials}</span>
-        </div>
+        </span>
       </button>
 
       <p className="relative z-10 mt-1 font-[family-name:var(--font-hero)] text-2xl text-[#2c3036]">

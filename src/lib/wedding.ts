@@ -43,9 +43,9 @@ export const wedding = {
     note: "Paleta sugerida: rosa, blush y blancos rotos. Eviten blanco total y tenis deportivos.",
   },
   gifts: {
-    title: "Mesa de regalos",
-    note: "Su presencia es el mejor regalo. Si desean un detalle extra, pueden depositarlo o preguntarnos en privado.",
-    accounts: [] as { bank: string; name: string; number: string }[],
+    kicker: "Regalo",
+    title: "Su presencia es el mejor detalle.",
+    line: "Muestras de cariño en sobre",
   },
   rsvp: {
     deadline: "1 de diciembre de 2026",

@@ -8,6 +8,7 @@ import { Countdown } from "./Countdown";
 import { Venue } from "./Venue";
 import { Timeline } from "./Timeline";
 import { Gallery } from "./Gallery";
+import { Gifts } from "./Gifts";
 import { RsvpForm } from "./RsvpForm";
 
 export function Invitation() {
@@ -25,6 +26,7 @@ export function Invitation() {
             <Venue />
             <Timeline />
             <Gallery />
+            <Gifts />
             <RsvpForm />
             <footer className="bg-[#d4af37] px-6 py-10 text-center text-white">
               <p className="font-[family-name:var(--font-script)] text-4xl">
