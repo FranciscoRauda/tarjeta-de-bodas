@@ -28,7 +28,7 @@ function NavIcon() {
 
 export function Venue() {
   return (
-    <section className="bg-[#fffdfc] px-6 pb-10 pt-12">
+    <section className="bg-transparent px-6 pb-10 pt-12">
       <p className="text-center text-[0.65rem] tracking-[0.38em] uppercase text-[#575E4B]">
         Con ustedes
       </p>

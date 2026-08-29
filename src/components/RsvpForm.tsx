@@ -55,7 +55,7 @@ export function RsvpForm() {
   }
 
   return (
-    <section className="bg-[#fffdfc] px-6 pb-12 pt-10" id="rsvp">
+    <section className="bg-transparent px-6 pb-12 pt-10" id="rsvp">
       <h3 className="text-center font-[family-name:var(--font-hero)] text-[2.6rem] leading-tight text-[#3a2a22]">
         Registra tu asistencia
       </h3>

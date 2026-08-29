@@ -40,7 +40,7 @@ export function Countdown() {
   ];
 
   return (
-    <section className="bg-[#eef1f4] px-6 py-10">
+    <section className="bg-[#ebe8df] px-6 py-10">
       <p className="text-center text-[0.65rem] tracking-[0.35em] uppercase text-[#575E4B]">
         Falta para el día
       </p>

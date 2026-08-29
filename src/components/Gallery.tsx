@@ -67,7 +67,7 @@ export function Gallery() {
   const idle = !busy && !leaving && drag.x === 0 && drag.y === 0;
 
   return (
-    <section className="bg-[#fffdfc] pt-4">
+    <section className="bg-transparent pt-4">
       <div className="relative mx-auto h-[380px] w-[270px]">
         {photos.map((src, i) => {
           const offset = (i - index + photos.length) % photos.length;
@@ -130,7 +130,7 @@ export function Gallery() {
       <button
         type="button"
         onClick={() => fly("left")}
-        className="mt-2 flex w-full flex-col items-center gap-1 bg-[#eef1f4] py-5 text-[#4a5058]"
+        className="mt-2 flex w-full flex-col items-center gap-1 bg-[#ebe8df] py-5 text-[#575E4B]"
       >
         <span className="swipe-hint-icon" aria-hidden>
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">

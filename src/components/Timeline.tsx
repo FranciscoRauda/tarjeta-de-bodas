@@ -44,7 +44,7 @@ function EventBlock({
 
 export function Timeline() {
   return (
-    <section className="bg-[#fffdfc] px-4 pb-12 pt-4">
+    <section className="bg-transparent px-4 pb-12 pt-4">
       <h3 className="text-center font-[family-name:var(--font-hero)] text-5xl text-[#7a6a62]">
         Itinerario
       </h3>

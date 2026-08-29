@@ -1,36 +1,60 @@
 import { ReactNode } from "react";
 import { wedding } from "@/lib/wedding";
 
-function CornerMarks() {
+function Flourish({ className = "" }: { className?: string }) {
   return (
-    <>
-      {[
-        "top-4 left-4 border-l border-t",
-        "top-4 right-4 border-r border-t",
-        "bottom-4 left-4 border-l border-b",
-        "bottom-4 right-4 border-r border-b",
-      ].map((pos) => (
-        <span
-          key={pos}
-          aria-hidden
-          className={`pointer-events-none absolute h-8 w-8 border-[#575E4B] ${pos}`}
-        />
-      ))}
-    </>
+    <svg className={className} width="92" height="92" viewBox="0 0 92 92" fill="none" aria-hidden>
+      <ellipse cx="30" cy="46" rx="10" ry="5" transform="rotate(-38 30 46)" fill="currentColor" opacity="0.38" />
+      <ellipse cx="46" cy="30" rx="10" ry="5" transform="rotate(38 46 30)" fill="currentColor" opacity="0.38" />
+      <ellipse cx="24" cy="28" rx="7" ry="3.6" transform="rotate(-50 24 28)" fill="currentColor" opacity="0.28" />
+    </svg>
   );
 }
 
-export function PhotoHero({ footer }: { footer?: ReactNode }) {
+function WeddingKnot({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} width="86" height="28" viewBox="0 0 86 28" fill="none" aria-hidden>
+      <path d="M4 14h22M60 14h22" stroke="currentColor" strokeWidth="1" opacity="0.55" />
+      <path
+        d="M43 5c-6 5-12 6-16 7 6 1 10 4 16 9 6-5 10-8 16-9-4-1-10-2-16-7Z"
+        fill="currentColor"
+        opacity="0.55"
+      />
+      <circle cx="43" cy="14" r="2" fill="currentColor" />
+    </svg>
+  );
+}
+
+function HeroFrame() {
+  return (
+    <div className="wedding-frame" aria-hidden>
+      <span className="wedding-frame-line" />
+      <span className="wedding-frame-line wedding-frame-line-inner" />
+      <Flourish className="wedding-flourish wedding-flourish-tl" />
+      <Flourish className="wedding-flourish wedding-flourish-tr" />
+      <Flourish className="wedding-flourish wedding-flourish-bl" />
+      <Flourish className="wedding-flourish wedding-flourish-br" />
+      <WeddingKnot className="wedding-knot wedding-knot-top" />
+      <WeddingKnot className="wedding-knot wedding-knot-bottom" />
+    </div>
+  );
+}
+
+export function PhotoHero({
+  footer,
+  clasp,
+}: {
+  footer?: ReactNode;
+  clasp?: ReactNode;
+}) {
   const a = wedding.couple.partnerOne;
   const b = wedding.couple.partnerTwo;
 
   return (
-    <section className="relative isolate min-h-[100dvh] overflow-hidden bg-[#fffdf8] px-5 py-7">
-      <div className="pointer-events-none absolute inset-[10px] border border-[#575E4B]/55" />
-      <div className="pointer-events-none absolute inset-[16px] border border-[#575E4B]/25" />
-      <CornerMarks />
+    <section className="relative isolate overflow-hidden bg-transparent px-6 py-9">
+      <HeroFrame />
 
-      <div className="relative z-10 flex min-h-[calc(100dvh-3.5rem)] flex-col items-center justify-between gap-5 py-2">
+      <div className="relative z-10 flex min-h-[min(100dvh,760px)] flex-col items-center justify-between gap-6 py-3">
         <div className="animate-rise text-center">
           <p className="text-[0.68rem] tracking-[0.46em] uppercase text-[#575E4B]">
             Boda civil
@@ -48,7 +72,8 @@ export function PhotoHero({ footer }: { footer?: ReactNode }) {
           </h1>
         </div>
 
-        <figure className="w-[min(86%,300px)] bg-white p-[9px] shadow-[0_18px_40px_-24px_rgba(44,48,54,0.45)] ring-1 ring-[#575E4B]/70">
+        <figure className="relative w-[min(82%,290px)] bg-[#fffdf8] p-[11px] shadow-[0_18px_40px_-24px_rgba(44,48,54,0.45)] ring-1 ring-[#575E4B]/55">
+          {clasp}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/hero.png"

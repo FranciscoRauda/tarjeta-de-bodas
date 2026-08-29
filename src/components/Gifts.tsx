@@ -51,7 +51,7 @@ export function Gifts() {
   const { gifts } = wedding;
 
   return (
-    <section className="bg-[#fffdfc] px-8 pb-6 pt-10">
+    <section className="bg-transparent px-8 pb-6 pt-10">
       <p className="text-center text-[0.65rem] tracking-[0.38em] uppercase text-[#575E4B]">
         {gifts.kicker}
       </p>
