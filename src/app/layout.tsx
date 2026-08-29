@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Allura, Gloock, Pinyon_Script, Source_Serif_4 } from "next/font/google";
+import { Allura, Gloock, Pinyon_Script, Playfair_Display, Source_Serif_4 } from "next/font/google";
 import { coupleFullNames, wedding } from "@/lib/wedding";
 import "./globals.css";
 
@@ -19,6 +19,12 @@ const hero = Allura({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-hero",
+});
+
+const monogram = Playfair_Display({
+  weight: "500",
+  subsets: ["latin"],
+  variable: "--font-seal",
 });
 
 const source = Source_Serif_4({
@@ -58,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${gloock.variable} ${script.variable} ${hero.variable} ${source.variable}`}
+      className={`${gloock.variable} ${script.variable} ${hero.variable} ${monogram.variable} ${source.variable}`}
       suppressHydrationWarning
     >
       <body className="antialiased" suppressHydrationWarning>

@@ -482,12 +482,12 @@ body {
   width: 176px;
   height: 176px;
   place-items: center;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 999px;
   filter: drop-shadow(0 14px 22px rgba(63, 68, 54, 0.34));
 }
 
-.wax-seal svg {
+.wax-seal > svg {
   position: absolute;
   inset: 0;
   display: block;
@@ -497,24 +497,27 @@ body {
   position: relative;
   z-index: 2;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
-  gap: 0.12em;
-  color: #f6f2e6;
-  font-family: var(--font-hero), cursive;
-  font-size: 3.15rem;
-  line-height: 0.8;
-  letter-spacing: 0.02em;
+  gap: 0.06em;
+  color: #fbf6e8;
+  font-family: var(--font-seal), "Playfair Display", Didot, "Bodoni MT", serif;
+  font-size: 3.55rem;
+  font-weight: 500;
+  line-height: 0.85;
+  letter-spacing: 0.04em;
   text-shadow:
     0 1px 0 rgba(255, 252, 242, 0.35),
-    0 2px 0 rgba(47, 51, 40, 0.35),
+    0 2px 0 rgba(47, 51, 40, 0.32),
     0 8px 12px rgba(47, 51, 40, 0.28);
 }
 
 .wax-monogram em {
-  font-style: normal;
-  font-size: 1.15rem;
-  opacity: 0.82;
+  font-style: italic;
+  margin: 0 0.02em 0.08em;
+  font-size: 1.55rem;
+  font-weight: 400;
+  opacity: 0.8;
 }
 
 .seal-stage:not(.is-opening) .wax-seal {
