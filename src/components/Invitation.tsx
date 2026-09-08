@@ -4,10 +4,9 @@ import { useState } from "react";
 import { coupleFullNames, wedding } from "@/lib/wedding";
 import { Cover } from "./Cover";
 import { Hero } from "./Hero";
-import { Countdown } from "./Countdown";
 import { Venue } from "./Venue";
 import { Timeline } from "./Timeline";
-import { Gallery } from "./Gallery";
+import { DressCode } from "./DressCode";
 import { Gifts } from "./Gifts";
 import { RsvpForm } from "./RsvpForm";
 
@@ -16,33 +15,26 @@ export function Invitation() {
 
   return (
     <main className="invite-shell">
-      <article className="invite-card">
+      <article className="invite-card paper-texture">
         {!open ? (
           <Cover onOpen={() => setOpen(true)} />
         ) : (
           <>
             <Hero />
-            <Countdown />
-            <Venue />
             <Timeline />
-            <Gallery />
+            <Venue />
+            <DressCode />
             <Gifts />
             <RsvpForm />
-            <footer className="bg-[#575E4B] px-6 py-10 text-center text-white">
-              <p className="font-[family-name:var(--font-script)] text-4xl">
-                {wedding.couple.partnerOne.first} & {wedding.couple.partnerTwo.first}
+            <footer className="section-stone px-6 py-10 text-center">
+              <p className="caps-names !text-[#4d4336] text-[0.85rem] tracking-[0.28em]">
+                {wedding.couple.partnerOne.first.toUpperCase()} &{" "}
+                {wedding.couple.partnerTwo.first.toUpperCase()}
               </p>
-              <p className="mt-3 text-[0.7rem] tracking-[0.28em] uppercase">
+              <p className="section-serif mt-3 text-[0.72rem] tracking-[0.2em] uppercase">
                 {wedding.datetime.shortDate} · {wedding.venue.name}
               </p>
-              <p className="mt-6 text-[0.7rem] leading-relaxed text-white/90">
-                Link de invitación ilimitado
-                <br />
-                <span className="break-all">/i/{wedding.slug}</span>
-              </p>
-              <p className="mt-4 text-[0.65rem] text-white/85">
-                {coupleFullNames()}
-              </p>
+              <p className="section-serif mt-5 text-[0.68rem] opacity-80">{coupleFullNames()}</p>
             </footer>
           </>
         )}

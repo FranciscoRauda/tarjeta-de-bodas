@@ -39,8 +39,8 @@ export const wedding = {
   ],
   dressCode: {
     title: "Código de vestimenta",
-    label: "Formal elegante",
-    note: "Paleta sugerida: rosa, blush y blancos rotos. Eviten blanco total y tenis deportivos.",
+    label: "Formal",
+    note: "Les recomendamos llevar abrigo para disfrutar cómodamente de la celebración.",
   },
   gifts: {
     kicker: "Regalo",
