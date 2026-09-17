@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { wedding } from "@/lib/wedding";
+import { calendarHref, wedding } from "@/lib/wedding";
+import { LeafDivider, PergaminoCard } from "./Ornaments";
+import { Reveal } from "./Reveal";
 
 const target = new Date(wedding.datetime.receptionIso).getTime();
 
@@ -33,38 +35,39 @@ export function Countdown() {
   }, []);
 
   const cells = [
-    { n: left.d, l: "días" },
-    { n: left.h, l: "hrs" },
-    { n: left.m, l: "min" },
-    { n: left.s, l: "seg" },
+    { n: left.d, l: "Días" },
+    { n: left.h, l: "Horas" },
+    { n: left.m, l: "Min" },
+    { n: left.s, l: "Seg" },
   ];
 
   return (
-    <section className="bg-[#ebe8df] px-6 py-10">
-      <p className="text-center text-[0.65rem] tracking-[0.35em] uppercase text-[#575E4B]">
-        Falta para el día
-      </p>
-      {left.done ? (
-        <p className="mt-4 text-center font-[family-name:var(--font-script)] text-3xl text-[#2c3036]">
-          ¡Hoy es el día!
-        </p>
-      ) : (
-        <div className="mt-5 grid grid-cols-4 gap-2">
-          {cells.map((c) => (
-            <div
-              key={c.l}
-              className="rounded-2xl bg-white px-1 py-3 text-center text-[#2c3036] shadow-[0_8px_20px_-12px_rgba(70,76,86,0.35)]"
-            >
-              <div className="font-[family-name:var(--font-display)] text-2xl tabular-nums">
-                {pad(c.n)}
+    <section className="invite-section section-countdown" aria-label="Cuenta regresiva">
+      <div className="wrap">
+        <Reveal>
+          <PergaminoCard>
+            <LeafDivider />
+            <p className="section-eyebrow">Faltan</p>
+            {left.done ? (
+              <p className="script-heading mt-4">¡Hoy es el día!</p>
+            ) : (
+              <div className="countdown-grid" role="timer" aria-live="off">
+                {cells.map((c) => (
+                  <div key={c.l} className="countdown-unit">
+                    <span className="countdown-num">{pad(c.n)}</span>
+                    <span className="countdown-lbl">{c.l}</span>
+                  </div>
+                ))}
               </div>
-              <div className="mt-1 text-[0.6rem] tracking-[0.18em] uppercase text-[#575E4B]">
-                {c.l}
-              </div>
+            )}
+            <div className="cal-actions">
+              <a href={calendarHref()} target="_blank" rel="noreferrer" className="btn-soft">
+                Google Calendar
+              </a>
             </div>
-          ))}
-        </div>
-      )}
+          </PergaminoCard>
+        </Reveal>
+      </div>
     </section>
   );
 }

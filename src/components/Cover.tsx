@@ -1,79 +1,125 @@
 "use client";
 
-import { KeyboardEvent, PointerEvent, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { wedding } from "@/lib/wedding";
-import { EnvelopeGraphic } from "./Ornaments";
+import { EnvelopeIllustration } from "./EnvelopeIllustration";
+import { GoldSeal, LeafDivider } from "./Ornaments";
 
-const SWIPE = 40;
+function burstConfetti(canvas: HTMLCanvasElement | null) {
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
 
-export function Cover({ onOpen }: { onOpen: () => void }) {
-  const [opening, setOpening] = useState(false);
+  const surface = canvas;
+  const paint = ctx;
+  surface.width = window.innerWidth;
+  surface.height = window.innerHeight;
+
+  const colors = ["#C6A15B", "#E0C07A", "#8A6C26", "#FDF3D8", "#7C8B6B"];
+  const pieces = Array.from({ length: 48 }, () => ({
+    x: surface.width * 0.5 + (Math.random() - 0.5) * 80,
+    y: surface.height * 0.48,
+    vx: (Math.random() - 0.5) * 7,
+    vy: Math.random() * -8 - 2,
+    size: Math.random() * 5 + 2,
+    rot: Math.random() * 360,
+    vr: (Math.random() - 0.5) * 12,
+    color: colors[Math.floor(Math.random() * colors.length)],
+    life: 1,
+  }));
+
+  let frame = 0;
+  function tick() {
+    paint.clearRect(0, 0, surface.width, surface.height);
+    let alive = false;
+    for (const p of pieces) {
+      if (p.life <= 0) continue;
+      alive = true;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.18;
+      p.rot += p.vr;
+      p.life -= 0.018;
+      paint.save();
+      paint.translate(p.x, p.y);
+      paint.rotate((p.rot * Math.PI) / 180);
+      paint.globalAlpha = Math.max(0, p.life);
+      paint.fillStyle = p.color;
+      paint.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+      paint.restore();
+    }
+    frame += 1;
+    if (alive && frame < 120) requestAnimationFrame(tick);
+    else paint.clearRect(0, 0, surface.width, surface.height);
+  }
+  tick();
+}
+
+export function Cover({
+  onOpen,
+  onComplete,
+}: {
+  onOpen: () => void;
+  onComplete: () => void;
+}) {
+  const [phase, setPhase] = useState<"idle" | "opening" | "gone">("idle");
   const locked = useRef(false);
-  const startY = useRef<number | null>(null);
-
-  const a = wedding.couple.partnerOne.first.toUpperCase();
-  const b = wedding.couple.partnerTwo.first.toUpperCase();
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   function open() {
-    if (locked.current) return;
+    if (locked.current || phase !== "idle") return;
     locked.current = true;
-    setOpening(true);
-    window.setTimeout(onOpen, 750);
+    setPhase("opening");
+    burstConfetti(canvasRef.current);
+
+    window.setTimeout(() => {
+      setPhase("gone");
+      onOpen();
+    }, 1650);
+
+    window.setTimeout(onComplete, 2400);
   }
 
-  function onPointerDown(e: PointerEvent<HTMLElement>) {
-    startY.current = e.clientY;
-  }
-
-  function onPointerMove(e: PointerEvent<HTMLElement>) {
-    if (startY.current == null) return;
-    if (e.clientY - startY.current <= -SWIPE) {
-      startY.current = null;
-      open();
-    }
-  }
-
-  function onPointerUp() {
-    startY.current = null;
-  }
-
-  function onKeyDown(e: KeyboardEvent<HTMLElement>) {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      open();
-    }
-  }
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   return (
-    <section
-      className={`cover-stage paper-texture ${opening ? "is-opening" : ""}`}
-      role="button"
-      tabIndex={0}
-      aria-label="Abrir invitación"
-      onClick={open}
-      onKeyDown={onKeyDown}
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={onPointerUp}
-      onPointerCancel={onPointerUp}
-    >
-      <div className="relative z-10 text-center">
-        <p className="caps-names">
-          {a} & {b}
-        </p>
-        <p className="mt-3 caps-names text-[0.95rem] tracking-[0.32em]">
-          {wedding.datetime.shortDate}
-        </p>
+    <>
+      <canvas ref={canvasRef} className="env-confetti" aria-hidden />
+      <div
+        className={`envelope-screen ${phase === "opening" ? "opening" : ""} ${phase === "gone" ? "is-gone" : ""}`}
+        onClick={open}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            open();
+          }
+        }}
+        role="button"
+        tabIndex={0}
+        aria-label="Abrir la invitación"
+      >
+        <p className="env-eyebrow">{wedding.tagline}</p>
+
+        <div className="env-stage">
+          <div className="env-photo">
+            <div className="env-card">
+              <LeafDivider className="env-orn" />
+              <span className="env-card-date">{wedding.datetime.shortDate}</span>
+            </div>
+            <div className="env-sheet" aria-hidden>
+              <EnvelopeIllustration />
+            </div>
+            <GoldSeal className="env-seal" />
+          </div>
+        </div>
+
+        <p className="env-hint">{phase === "opening" ? "Abriendo…" : "Toca el sello para abrir"}</p>
       </div>
-
-      <EnvelopeGraphic />
-
-      <div className="cover-reserved lace-card">
-        <p className="font-[family-name:var(--font-display)] text-2xl text-[#8a8278]">♥</p>
-        <p className="mt-1">Un espacio ha sido reservado para ti</p>
-      </div>
-
-      <p className="cover-hint">{opening ? "Abriendo…" : "Pulsa para abrir"}</p>
-    </section>
+    </>
   );
 }

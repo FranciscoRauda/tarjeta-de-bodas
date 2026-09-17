@@ -1,24 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Allura, Gloock, Pinyon_Script, Playfair_Display, Source_Serif_4 } from "next/font/google";
+import { Archivo, Fraunces, Pinyon_Script, Playfair_Display, Source_Serif_4 } from "next/font/google";
 import { coupleFullNames, wedding } from "@/lib/wedding";
 import "./globals.css";
 
-const gloock = Gloock({
-  weight: "400",
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-gloock",
+  variable: "--font-fraunces",
+});
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
 });
 
 const script = Pinyon_Script({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-script",
-});
-
-const hero = Allura({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-hero",
 });
 
 const monogram = Playfair_Display({
@@ -51,7 +49,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#d4cdc3",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
 };
@@ -64,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${gloock.variable} ${script.variable} ${hero.variable} ${monogram.variable} ${source.variable}`}
+      className={`${fraunces.variable} ${archivo.variable} ${script.variable} ${monogram.variable} ${source.variable}`}
       suppressHydrationWarning
     >
       <body className="antialiased" suppressHydrationWarning>

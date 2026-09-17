@@ -5,7 +5,7 @@ export function DressCode() {
   const { dressCode } = wedding;
 
   return (
-    <section className="section-stone px-5 py-12">
+    <section className="invite-section">
       <DressCodeBadge />
       <DetailCard title={dressCode.label} className="mt-2">
         <p className="text-[0.92rem] leading-relaxed">{dressCode.note}</p>

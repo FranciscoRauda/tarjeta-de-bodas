@@ -7,7 +7,7 @@ export function EventIcon({ name }: { name: EventIconName }) {
     viewBox: "0 0 24 24",
     fill: "none",
     "aria-hidden": true as const,
-    className: "text-[#2c3036] shrink-0",
+    className: "stop-icon shrink-0",
   };
 
   if (name === "venue") {

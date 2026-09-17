@@ -51,16 +51,32 @@ export function Confirmations() {
     }
     setData(await res.json());
     setUnlocked(true);
+    setKey(adminKey);
     setError("");
     sessionStorage.setItem("boda-admin", adminKey);
   }
 
   useEffect(() => {
     const saved = sessionStorage.getItem("boda-admin");
-    if (saved) {
-      setKey(saved);
-      void load(saved);
-    }
+    if (!saved) return;
+
+    let cancelled = false;
+
+    fetch("/api/rsvp", { headers: { "x-admin-key": saved } })
+      .then(async (res) => {
+        if (cancelled || !res.ok) return;
+        setKey(saved);
+        setData(await res.json());
+        setUnlocked(true);
+        setError("");
+      })
+      .catch(() => {
+        if (!cancelled) setError("No se pudo cargar la lista.");
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   function onSubmit(e: FormEvent) {
