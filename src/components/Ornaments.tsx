@@ -54,37 +54,27 @@ export function BotanicalEnvRight({ className = "" }: { className?: string }) {
 }
 
 export function GoldSeal({ className = "" }: { className?: string }) {
-  const initials = wedding.couple.initials;
+  const { partnerOne, partnerTwo, initials } = wedding.couple;
 
   return (
     <div className={`gold-seal ${className}`}>
-      <svg viewBox="0 0 120 120" fill="none" aria-hidden>
-        <defs>
-          <radialGradient id="seal-gold" cx="36%" cy="28%" r="72%">
-            <stop offset="0%" stopColor="#FFF6E0" />
-            <stop offset="28%" stopColor="#E8C878" />
-            <stop offset="62%" stopColor="#C6A15B" />
-            <stop offset="100%" stopColor="#6E5210" />
-          </radialGradient>
-          <filter id="seal-shadow">
-            <feDropShadow dx="0" dy="4" stdDeviation="5" floodColor="#4A3810" floodOpacity="0.4" />
-          </filter>
-        </defs>
-        <path
-          filter="url(#seal-shadow)"
-          d="M60 14
-             C70 10 80 12 88 18 C96 12 108 10 118 16
-             C124 24 122 36 120 48 C124 60 122 72 116 82
-             C108 92 96 94 86 98 C76 104 64 104 54 98
-             C44 94 32 92 24 82 C18 72 16 60 20 48
-             C18 36 16 24 22 16 C32 10 44 12 52 18
-             C56 14 58 14 60 14 Z"
-          fill="url(#seal-gold)"
-        />
-        <ellipse cx="42" cy="36" rx="20" ry="11" fill="rgba(255,248,225,0.4)" />
-        <ellipse cx="78" cy="72" rx="14" ry="8" fill="rgba(90,65,15,0.12)" />
-      </svg>
-      <span className="gold-seal-monogram">{initials}</span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/img/gold-seal.png"
+        alt=""
+        width={512}
+        height={512}
+        className="gold-seal-art"
+        aria-hidden
+        decoding="async"
+      />
+      <span className="gold-seal-monogram" aria-label={initials}>
+        <span className="gold-seal-letter">{partnerOne.first[0]}</span>
+        <span className="gold-seal-dot" aria-hidden>
+          ·
+        </span>
+        <span className="gold-seal-letter">{partnerTwo.first[0]}</span>
+      </span>
     </div>
   );
 }

@@ -1,5 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Fraunces, Pinyon_Script, Playfair_Display, Source_Serif_4 } from "next/font/google";
+import {
+  Archivo,
+  Cormorant_Garamond,
+  Fraunces,
+  Pinyon_Script,
+  Playfair_Display,
+  Source_Serif_4,
+} from "next/font/google";
 import { coupleFullNames, wedding } from "@/lib/wedding";
 import "./globals.css";
 
@@ -20,9 +27,16 @@ const script = Pinyon_Script({
 });
 
 const monogram = Playfair_Display({
-  weight: "500",
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
   variable: "--font-seal",
+});
+
+const sealLetters = Cormorant_Garamond({
+  weight: ["500", "600"],
+  style: ["italic"],
+  subsets: ["latin"],
+  variable: "--font-seal-letters",
 });
 
 const source = Source_Serif_4({
@@ -62,7 +76,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${fraunces.variable} ${archivo.variable} ${script.variable} ${monogram.variable} ${source.variable}`}
+      className={`${fraunces.variable} ${archivo.variable} ${script.variable} ${monogram.variable} ${sealLetters.variable} ${source.variable}`}
       suppressHydrationWarning
     >
       <body className="antialiased" suppressHydrationWarning>
