@@ -58,9 +58,11 @@ function burstConfetti(canvas: HTMLCanvasElement | null) {
 export function Cover({
   onOpen,
   onComplete,
+  onStartMusic,
 }: {
   onOpen: () => void;
   onComplete: () => void;
+  onStartMusic?: () => void;
 }) {
   const [phase, setPhase] = useState<"idle" | "opening" | "gone">("idle");
   const locked = useRef(false);
@@ -71,6 +73,7 @@ export function Cover({
     locked.current = true;
     setPhase("opening");
     burstConfetti(canvasRef.current);
+    onStartMusic?.();
 
     window.setTimeout(() => {
       setPhase("gone");
@@ -92,6 +95,10 @@ export function Cover({
       <canvas ref={canvasRef} className="env-confetti" aria-hidden />
       <div
         className={`envelope-screen ${phase === "opening" ? "opening" : ""} ${phase === "gone" ? "is-gone" : ""}`}
+        onPointerDown={(e) => {
+          if (e.pointerType === "mouse" && e.button !== 0) return;
+          onStartMusic?.();
+        }}
         onClick={open}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {

@@ -50,7 +50,7 @@ export const wedding = {
   rsvp: {
     deadline: "1 de diciembre de 2026",
     // Número de Samuel o Sofía, con código de país y sin + ni espacios. Ej. 50370112233
-    hostWhatsApp: "",
+    hostWhatsApp: "50377203615",
     countryCode: "503",
     countryLabel: "SV +503",
     adminKey: "samuelsofia",
@@ -62,6 +62,12 @@ export const wedding = {
     "/gallery/04.webp",
     "/gallery/05.webp",
   ],
+  music: {
+    enabled: true,
+    src: "/audio/entrance.mp3",
+    title: "Marcha Nupcial",
+    volume: 0.62,
+  },
   hostNames: "Samuel y Sofía",
 } as const;
 

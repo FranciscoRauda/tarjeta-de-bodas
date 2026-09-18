@@ -102,17 +102,21 @@ export function RsvpForm() {
               </div>
 
               <label className="block text-sm">
-                Teléfono (opcional)
+                Tu WhatsApp (opcional)
+                <p className="mt-1 text-[0.78rem] font-normal leading-snug text-[var(--color-cacao-faint)]">
+                  Solo para contactarte si hace falta. Escribe tu número local, sin el +503.
+                </p>
                 <div className="mt-2 flex gap-2">
-                  <span className="field w-[7.8rem] shrink-0 text-center text-sm">
-                    🇸🇻 {wedding.rsvp.countryLabel.toLowerCase()}
+                  <span className="field phone-prefix shrink-0" aria-hidden>
+                    +{wedding.rsvp.countryCode}
                   </span>
                   <input
-                    className="field"
+                    className="field min-w-0 flex-1"
                     inputMode="numeric"
-                    placeholder="1234567890"
+                    autoComplete="tel-national"
+                    placeholder="7720 3615"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={(e) => setPhone(e.target.value.replace(/[^\d\s-]/g, ""))}
                   />
                 </div>
               </label>
@@ -132,7 +136,7 @@ export function RsvpForm() {
           )}
 
           <p className="section-serif mt-6 text-[0.78rem] opacity-80">
-            Tu confirmación llega directo a nuestra lista.
+            Al confirmar se abre WhatsApp con el mensaje listo para enviar a Samuel y Sofía.
           </p>
         </Reveal>
       </div>

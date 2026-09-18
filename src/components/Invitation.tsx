@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { playWeddingMusic } from "@/lib/playWeddingMusic";
 import { coupleFullNames, heroMetaLine, wedding } from "@/lib/wedding";
 import { ConfirmFab } from "./ConfirmFab";
 import { Countdown } from "./Countdown";
@@ -11,10 +12,25 @@ import { Hero } from "./Hero";
 import { Itinerary } from "./Itinerary";
 import { PageBackground } from "./PageBackground";
 import { RsvpForm } from "./RsvpForm";
+import { WeddingMusicToggle } from "./WeddingMusic";
 
 export function Invitation() {
   const [opened, setOpened] = useState(false);
   const [showCover, setShowCover] = useState(true);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const startMusic = useCallback(() => {
+    if (!wedding.music.enabled) return;
+    void playWeddingMusic(audioRef.current, wedding.music.volume);
+  }, []);
+
+  useEffect(() => {
+    if (!wedding.music.enabled) return;
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = wedding.music.volume;
+    audio.load();
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.add("js-ready");
@@ -34,8 +50,22 @@ export function Invitation() {
     <>
       <PageBackground />
       <div className="grain-overlay" aria-hidden />
+      {wedding.music.enabled ? (
+        <audio
+          ref={audioRef}
+          src={wedding.music.src}
+          loop
+          preload="auto"
+          playsInline
+          aria-hidden
+        />
+      ) : null}
       {showCover ? (
-        <Cover onOpen={() => setOpened(true)} onComplete={() => setShowCover(false)} />
+        <Cover
+          onStartMusic={startMusic}
+          onOpen={() => setOpened(true)}
+          onComplete={() => setShowCover(false)}
+        />
       ) : null}
 
       <main className="site-page">
@@ -58,6 +88,7 @@ export function Invitation() {
         </footer>
       </main>
 
+      <WeddingMusicToggle audioRef={audioRef} visible={opened} />
       <ConfirmFab visible={opened} />
     </>
   );

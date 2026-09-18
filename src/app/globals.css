@@ -1045,6 +1045,20 @@ body {
   box-shadow: 0 0 0 3px rgba(198, 161, 91, 0.25);
 }
 
+.phone-prefix {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.25rem;
+  padding-inline: 0.65rem;
+  background: #f7f4ee;
+  color: var(--color-cacao-dim);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
 .site-footer {
   position: relative;
   overflow: hidden;
@@ -1109,6 +1123,39 @@ body {
 }
 
 .fab.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.music-toggle {
+  position: fixed;
+  left: max(0.9rem, env(safe-area-inset-left));
+  bottom: calc(0.9rem + env(safe-area-inset-bottom));
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(124, 139, 107, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 20px -10px rgba(79, 64, 50, 0.28);
+  color: var(--color-verde);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, opacity 0.3s;
+}
+
+.music-toggle svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.music-toggle:hover {
+  transform: translateY(-1px);
+  background: #fff;
+}
+
+.js-ready:not(.opened) .music-toggle {
   opacity: 0;
   pointer-events: none;
 }
