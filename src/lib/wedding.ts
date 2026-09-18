@@ -55,7 +55,13 @@ export const wedding = {
     countryLabel: "SV +503",
     adminKey: "samuelsofia",
   },
-  gallery: ["/hero.png", "/gallery/01.png", "/gallery/02.png"],
+  gallery: [
+    "/gallery/01.webp",
+    "/gallery/02.webp",
+    "/gallery/03.webp",
+    "/gallery/04.webp",
+    "/gallery/05.webp",
+  ],
   hostNames: "Samuel y Sofía",
 } as const;
 
@@ -119,4 +125,28 @@ export function calendarHref() {
     `${wedding.venue.name}, ${wedding.venue.address}`,
   );
   return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${start}/${end}&details=${details}&location=${location}&ctz=${wedding.datetime.timezone}`;
+}
+
+export function outlookCalendarHref() {
+  const subject = encodeURIComponent(`Boda de ${coupleFullNames()}`);
+  const body = encodeURIComponent(
+    `${wedding.venue.title}: ${wedding.venue.name}. ${wedding.venue.address}`,
+  );
+  const location = encodeURIComponent(
+    `${wedding.venue.name}, ${wedding.venue.address}`,
+  );
+  return `https://outlook.live.com/calendar/0/deeplink/compose?subject=${subject}&body=${body}&location=${location}&startdt=2026-12-21T15:30:00&enddt=2026-12-21T23:00:00&allday=false`;
+}
+
+export function heroMetaLine() {
+  return `${wedding.datetime.shortDate} · ${wedding.venue.name}`;
+}
+
+export function eventDayLine() {
+  const label = new Intl.DateTimeFormat("es-SV", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  }).format(new Date(wedding.datetime.iso));
+  return label.charAt(0).toUpperCase() + label.slice(1);
 }

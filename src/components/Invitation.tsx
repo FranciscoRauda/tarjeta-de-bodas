@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { coupleFullNames, wedding } from "@/lib/wedding";
+import { coupleFullNames, heroMetaLine, wedding } from "@/lib/wedding";
 import { ConfirmFab } from "./ConfirmFab";
 import { Countdown } from "./Countdown";
 import { Cover } from "./Cover";
@@ -51,9 +51,7 @@ export function Invitation() {
               {wedding.couple.partnerOne.first}{" "}
               <span className="amp">&amp;</span> {wedding.couple.partnerTwo.first}
             </p>
-            <p className="footer-note">
-              {wedding.datetime.shortDate} · {wedding.venue.name}
-            </p>
+            <p className="footer-note">{heroMetaLine()}</p>
             <p className="footer-cierre">Los esperamos.</p>
             <p className="section-serif mt-4 text-[0.82rem]">{coupleFullNames()}</p>
           </div>

@@ -1,9 +1,5 @@
-import { coupleFullNames, wedding } from "@/lib/wedding";
-
-function heroDateLine() {
-  const [day, month, year] = wedding.datetime.shortDate.split(" · ");
-  return `${day} - ${month} - ${year} - ${wedding.venue.name.toUpperCase()}`;
-}
+import { coupleFullNames, heroMetaLine, wedding } from "@/lib/wedding";
+import { RingsIcon } from "./Ornaments";
 
 export function Hero() {
   const a = wedding.couple.partnerOne.first;
@@ -61,8 +57,9 @@ export function Hero() {
           {a} <span className="amp foil-text">&amp;</span> {b}
         </h1>
 
-        <p className="hero-meta hero-rise d4">{heroDateLine()}</p>
+        <p className="hero-meta hero-rise d4">{heroMetaLine()}</p>
         <p className="hero-line hero-rise d5">{wedding.invitationLine}</p>
+        <RingsIcon className="hero-rise d6" />
         <p className="sr-only">{coupleFullNames()}</p>
       </div>
     </header>

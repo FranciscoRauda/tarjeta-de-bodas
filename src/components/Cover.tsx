@@ -103,6 +103,27 @@ export function Cover({
         tabIndex={0}
         aria-label="Abrir la invitación"
       >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/img/hero-bouquet.png"
+          alt=""
+          width={200}
+          height={260}
+          className="cover-deco cover-deco-bouquet"
+          aria-hidden
+          decoding="async"
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/img/hero-olive.png"
+          alt=""
+          width={160}
+          height={220}
+          className="cover-deco cover-deco-olive"
+          aria-hidden
+          decoding="async"
+        />
+
         <p className="env-eyebrow">{wedding.tagline}</p>
 
         <div className="env-stage">

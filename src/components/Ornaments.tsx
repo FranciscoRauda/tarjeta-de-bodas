@@ -1,6 +1,25 @@
 import type { ReactNode } from "react";
 import { wedding } from "@/lib/wedding";
 
+export function RibbonLabel({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return <p className={`ribbon-label ${className}`}>{children}</p>;
+}
+
+export function RingsIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg className={`rings-icon ${className}`} viewBox="0 0 52 30" fill="none" aria-hidden>
+      <circle cx="18" cy="15" r="10" stroke="currentColor" strokeWidth="1.2" />
+      <circle cx="34" cy="15" r="10" stroke="currentColor" strokeWidth="1.2" />
+    </svg>
+  );
+}
+
 export function LeafDivider({ className = "" }: { className?: string }) {
   return (
     <svg className={`leaf-divider ${className}`} viewBox="0 0 180 30" fill="none" aria-hidden>

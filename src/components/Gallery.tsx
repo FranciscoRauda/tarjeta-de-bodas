@@ -32,6 +32,8 @@ export function Gallery() {
     }));
   }, []);
 
+  const galleryCount = wedding.gallery.length || 1;
+
   function scroll(dir: -1 | 1) {
     const rail = scrollRef.current;
     if (!rail) return;
@@ -61,7 +63,7 @@ export function Gallery() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={photo.src}
-                alt={`Samuel y Sofía — foto ${(i % 3) + 1}`}
+                alt={`Samuel y Sofía — foto ${(i % galleryCount) + 1}`}
                 loading={i < 4 ? "eager" : "lazy"}
                 draggable={false}
               />

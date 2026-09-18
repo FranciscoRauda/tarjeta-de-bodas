@@ -1,4 +1,4 @@
-import { mapsHref, wazeHref, wedding } from "@/lib/wedding";
+import { eventDayLine, mapsHref, wazeHref, wedding } from "@/lib/wedding";
 import { EventIcon } from "./EventIcon";
 import { LeafDivider, BotanicalEnvRight } from "./Ornaments";
 import { Reveal } from "./Reveal";
@@ -10,7 +10,7 @@ export function Itinerary() {
       <div className="wrap">
         <Reveal className="section-head">
           <LeafDivider />
-          <p className="section-eyebrow">{wedding.datetime.displayDate}</p>
+          <p className="section-eyebrow">{eventDayLine()}</p>
           <h2 className="section-title">Así será el día</h2>
         </Reveal>
 

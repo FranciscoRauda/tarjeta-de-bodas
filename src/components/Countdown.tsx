@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { calendarHref, wedding } from "@/lib/wedding";
-import { LeafDivider, PergaminoCard } from "./Ornaments";
+import { calendarHref, outlookCalendarHref, wedding } from "@/lib/wedding";
+import { LeafDivider, PergaminoCard, RibbonLabel } from "./Ornaments";
 import { Reveal } from "./Reveal";
 
 const target = new Date(wedding.datetime.receptionIso).getTime();
@@ -47,7 +47,7 @@ export function Countdown() {
         <Reveal>
           <PergaminoCard>
             <LeafDivider />
-            <p className="section-eyebrow">Faltan</p>
+            <RibbonLabel>Faltan</RibbonLabel>
             {left.done ? (
               <p className="script-heading mt-4">¡Hoy es el día!</p>
             ) : (
@@ -63,6 +63,9 @@ export function Countdown() {
             <div className="cal-actions">
               <a href={calendarHref()} target="_blank" rel="noreferrer" className="btn-soft">
                 Google Calendar
+              </a>
+              <a href={outlookCalendarHref()} target="_blank" rel="noreferrer" className="btn-soft">
+                Outlook
               </a>
             </div>
           </PergaminoCard>
