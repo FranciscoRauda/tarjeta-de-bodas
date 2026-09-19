@@ -18,7 +18,8 @@ export function Itinerary() {
           <EventIcon name="venue" />
           <p className="stop-time foil-text">{wedding.datetime.ceremonyTime}</p>
           <p className="stop-kicker">{wedding.venue.title}</p>
-          <h3 className="stop-name">{wedding.venue.name}</h3>
+          <h3 className="stop-location-label">Lugar</h3>
+          <p className="stop-name">{wedding.venue.name}</p>
           <p className="stop-addr">{wedding.venue.address}</p>
           <span className="chip">Les recomendamos llegar con tiempo</span>
           <div className="stop-actions">

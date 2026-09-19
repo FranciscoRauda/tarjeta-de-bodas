@@ -19,16 +19,15 @@ export const wedding = {
     timezone: "America/El_Salvador",
   },
   venue: {
-    title: "Ceremonia civil",
-    name: "Casa Vulkan",
-    address: "Km 18.5, Carretera al Boquerón, Volcán de San Salvador",
-    extra: "Hostal Casa Volcán, Calle al Volcán, Santa Tecla, El Salvador",
-    mapsQuery:
-      "Casa Vulkan Km 18.5 Carretera al Boquerón Volcán de San Salvador",
+    title: "Boda civil",
+    name: "Bistro Boquerón",
+    address: "Km 18 1/2, Volcán de San Salvador, El Salvador",
+    extra: "Bistro Boquerón, Km 18 1/2, Volcán de San Salvador",
+    mapsQuery: "Bistro Boquerón Km 18 1/2 Volcán de San Salvador El Salvador",
     mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Casa+Vulkan+Km+18.5+Carretera+al+Boqueron+Volcan+de+San+Salvador",
+      "https://www.google.com/maps/search/?api=1&query=Bistro+Boquer%C3%B3n+Km+18+1%2F2+Volc%C3%A1n+de+San+Salvador+El+Salvador",
     mapsEmbed:
-      "https://maps.google.com/maps?q=Casa%20Vulkan%20Km%2018.5%20Carretera%20al%20Boquer%C3%B3n%20Volc%C3%A1n%20de%20San%20Salvador&z=15&output=embed",
+      "https://maps.google.com/maps?q=Bistro%20Boquer%C3%B3n%20Km%2018%201%2F2%20Volc%C3%A1n%20de%20San%20Salvador%20El%20Salvador&z=15&output=embed",
   },
   itinerary: [
     { time: "03:30 pm", title: "recepción", icon: "venue" },
@@ -61,11 +60,14 @@ export const wedding = {
     "/gallery/03.webp",
     "/gallery/04.webp",
     "/gallery/05.webp",
+    "/gallery/06.webp",
+    "/gallery/07.webp",
+    "/gallery/08.webp",
   ],
   music: {
     enabled: true,
     src: "/audio/entrance.mp3",
-    title: "Marcha Nupcial",
+    title: "Thinking Out Loud",
     volume: 0.62,
   },
   hostNames: "Samuel y Sofía",
